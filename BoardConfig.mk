@@ -2,7 +2,7 @@
 # Copyright (c) 2020 Rockchip Electronics Co., Ltd
 #
 
-CURRENT_SDK_VERSION := rk356x_ANDROID10.0_MID_V1.0
+CURRENT_SDK_VERSION := rk356x_ANDROID13.0_MID_V1.0
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -20,7 +20,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 PRODUCT_UBOOT_CONFIG ?= rk3568
 PRODUCT_KERNEL_ARCH ?= arm64
 PRODUCT_KERNEL_DTS ?= rk3568-evb1-ddr4-v10
-PRODUCT_KERNEL_CONFIG ?= rockchip_defconfig
+PRODUCT_KERNEL_CONFIG ?= rockchip_defconfig rk356x.config
 
 # BOARD_AVB_ENABLE := true
 # used for fstab_generator, sdmmc controller address
@@ -44,7 +44,7 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a55
 TARGET_USES_64_BIT_BCMDHD := true
 TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_KERNEL_VERSION := 4.19
+PRODUCT_KERNEL_VERSION := 5.10
 
 # HACK: Build apps as 64b for volantis_64_only
 ifneq (,$(filter ro.zygote=zygote64, $(PRODUCT_DEFAULT_PROPERTY_OVERRIDES)))
@@ -112,9 +112,11 @@ BOARD_SHOW_HDMI_SETTING ?= true
 # for dynamaic afbc target 
 BOARD_HS_DYNAMIC_AFBC_TARGET := false
 
-PRODUCT_HAVE_OPTEE := true
+PRODUCT_HAVE_OPTEE := false
 
 #trust is merging into uboot
 BOARD_ROCKCHIP_TRUST_MERGE_TO_UBOOT := true
 
 BOARD_BASEPARAMETER_SUPPORT := true
+
+TARGET_SUPPORTS_OMX_SERVICE := false

@@ -13,18 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include device/rockchip/rk356x/BoardConfig.mk
+BUILD_WITH_GO_OPT := true
+PRODUCT_UBOOT_CONFIG := rk3566
+PRODUCT_KERNEL_DTS := rk3566-rk817-tablet
+CAMERA_SUPPORT_AUTOFOCUS := true
 
-PRODUCT_MAKEFILES := \
-        $(LOCAL_DIR)/rk3566_tgo/rk3566_tgo.mk \
-        $(LOCAL_DIR)/rk3566_t/rk3566_t.mk \
-        $(LOCAL_DIR)/rk3568_t/rk3568_t.mk
+BOARD_USES_AB_IMAGE := false
+BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 
-COMMON_LUNCH_CHOICES := \
-    rk3566_tgo-userdebug \
-    rk3566_tgo-user \
-    rk3566_t-userdebug \
-    rk3566_t-user \
-    rk3568_t-userdebug \
-    rk3568_t-user
-
-
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
+  include device/rockchip/common/BoardConfig_AB.mk
+  TARGET_RECOVERY_FSTAB := device/rockchip/rk356x/rk3566_tgo/recovery.fstab_AB
+endif

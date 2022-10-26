@@ -13,18 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include device/rockchip/rk356x/BoardConfig.mk
+BUILD_WITH_GO_OPT := false
 
-PRODUCT_MAKEFILES := \
-        $(LOCAL_DIR)/rk3566_tgo/rk3566_tgo.mk \
-        $(LOCAL_DIR)/rk3566_t/rk3566_t.mk \
-        $(LOCAL_DIR)/rk3568_t/rk3568_t.mk
+# AB image definition
+BOARD_USES_AB_IMAGE := false
+BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 
-COMMON_LUNCH_CHOICES := \
-    rk3566_tgo-userdebug \
-    rk3566_tgo-user \
-    rk3566_t-userdebug \
-    rk3566_t-user \
-    rk3568_t-userdebug \
-    rk3568_t-user
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
+    include device/rockchip/common/BoardConfig_AB.mk
+    TARGET_RECOVERY_FSTAB := device/rockchip/rk356x/rk3568_t/recovery.fstab_AB
+endif
 
-
+PRODUCT_UBOOT_CONFIG := rk3568
+PRODUCT_KERNEL_DTS := rk3568-evb1-ddr4-v10
+BOARD_GSENSOR_MXC6655XA_SUPPORT := true
+BOARD_CAMERA_SUPPORT_EXT := true
+BOARD_HS_ETHERNET := true
