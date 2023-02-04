@@ -33,6 +33,7 @@
         <item>"wifi,1,1,2,-1,true"</item>
         <item>"bluetooth,7,7,0,-1,true"</item>
         <item>"ethernet,9,9,9,-1,true"</item>
+    </string-array>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
