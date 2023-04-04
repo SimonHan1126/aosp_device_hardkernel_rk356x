@@ -7,9 +7,9 @@ on property:sys.boot_completed=1
     chmod 0664 /sys/class/devfreq/ff400000.gpu/min_freq
     chmod 0664 /sys/class/devfreq/ff400000.gpu/max_freq
 
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor interactive
     write /sys/devices/system/cpu/cpufreq/policy0/interactive/target_loads 65
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor interactive
 
     write /sys/class/devfreq/dmc/governor dmc_ondemand
 
@@ -22,9 +22,9 @@ on charger
     chmod 0664 /sys/class/devfreq/ff400000.gpu/min_freq
     chmod 0664 /sys/class/devfreq/ff400000.gpu/max_freq
 
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor interactive
     write /sys/devices/system/cpu/cpufreq/policy0/interactive/target_loads 65
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor interactive
 
     write /sys/class/devfreq/dmc/governor dmc_ondemand
 
