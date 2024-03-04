@@ -19,11 +19,11 @@ PRODUCT_SHIPPING_API_LEVEL := 33
 PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
-include device/rockchip/common/build/rockchip/DynamicPartitions.mk
-include device/rockchip/rk356x/rk3568_t/BoardConfig.mk
-include device/rockchip/common/BoardConfig.mk
-$(call inherit-product, device/rockchip/rk356x/device.mk)
-$(call inherit-product, device/rockchip/common/device.mk)
+include device/hardkernel/common/build/rockchip/DynamicPartitions.mk
+include device/hardkernel/rk356x/rk3568_t/BoardConfig.mk
+include device/hardkernel/common/BoardConfig.mk
+$(call inherit-product, device/hardkernel/rk356x/device.mk)
+$(call inherit-product, device/hardkernel/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay

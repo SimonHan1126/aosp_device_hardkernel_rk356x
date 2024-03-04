@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include device/rockchip/rk356x/BoardConfig.mk
+include device/hardkernel/rk356x/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 
 PRODUCT_UBOOT_CONFIG := rk3566
@@ -28,6 +28,6 @@ BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 BOARD_ROCKCHIP_VIRTUAL_AB_COMPRESSION_WITH_GKI_ENABLE := false
 
 ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
-    include device/rockchip/common/BoardConfig_AB.mk
-    TARGET_RECOVERY_FSTAB := device/rockchip/rk356x/rk3566_t/recovery.fstab_AB
+    include device/hardkernel/common/BoardConfig_AB.mk
+    TARGET_RECOVERY_FSTAB := device/hardkernel/rk356x/rk3566_t/recovery.fstab_AB
 endif

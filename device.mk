@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_partial_updates=false
 
-TARGET_SYSTEM_PROP += device/rockchip/rk356x/rk356x.prop
+TARGET_SYSTEM_PROP += device/hardkernel/rk356x/rk356x.prop
 # enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
