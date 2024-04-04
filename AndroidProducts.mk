@@ -17,7 +17,9 @@
 PRODUCT_MAKEFILES := \
         $(LOCAL_DIR)/rk3566_tgo/rk3566_tgo.mk \
         $(LOCAL_DIR)/rk3566_t/rk3566_t.mk \
-        $(LOCAL_DIR)/rk3568_t/rk3568_t.mk
+        $(LOCAL_DIR)/rk3568_t/rk3568_t.mk \
+        $(LOCAL_DIR)/odroidm1s/odroidm1s.mk \
+        $(LOCAL_DIR)/odroidm1/odroidm1.mk
 
 COMMON_LUNCH_CHOICES := \
     rk3566_tgo-userdebug \
@@ -25,6 +27,10 @@ COMMON_LUNCH_CHOICES := \
     rk3566_t-userdebug \
     rk3566_t-user \
     rk3568_t-userdebug \
-    rk3568_t-user
-
-
+    rk3568_t-user \
+    odroidm1-eng \
+    odroidm1-userdebug \
+    odroidm1-user \
+    odroidm1s-eng \
+    odroidm1s-userdebug \
+    odroidm1s-user
