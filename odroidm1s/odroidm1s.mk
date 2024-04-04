@@ -52,8 +52,8 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 #
 # Set the hwc display target
 #
-#PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.primary=DSI
-#PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,TV
+PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.primary=DSI
+PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,TV
 
 #
 # ODROID-M1S Files
