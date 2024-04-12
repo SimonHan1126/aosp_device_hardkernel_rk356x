@@ -62,7 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,TV
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/files/config.ini.template:$(TARGET_COPY_OUT_VENDOR)/etc/config.ini.template
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 PRODUCT_PACKAGES += \
     AndroidTerm \
 
@@ -80,12 +80,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/files/check_ups.sh:$(TARGET_COPY_OUT_VENDOR)/bin/check_ups.sh \
     $(LOCAL_PATH)/init.odroidm1s.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.odroidm1s.rc
 
-ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.url.official=https://dn.odroid.com/RK3566/ODROID-M1S/Android/13/userdebug/ \
-    ro.url.mirror=https://www.odroid.in/mirror/dn.odroid.com/RK3566/ODROID-M1S/Android/13/userdebug/
-else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.official=https://dn.odroid.com/RK3566/ODROID-M1S/Android/13/ \
     ro.url.mirror=https://www.odroid.in/mirror/dn.odroid.com/RK3566/ODROID-M1S/Android/13/
-endif

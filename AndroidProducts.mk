@@ -28,9 +28,7 @@ COMMON_LUNCH_CHOICES := \
     rk3566_t-user \
     rk3568_t-userdebug \
     rk3568_t-user \
-    odroidm1-eng \
     odroidm1-userdebug \
     odroidm1-user \
-    odroidm1s-eng \
     odroidm1s-userdebug \
     odroidm1s-user
