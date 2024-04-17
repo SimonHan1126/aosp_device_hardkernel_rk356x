@@ -34,3 +34,10 @@ BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 BOARD_SUPPORT_HDMI_CEC := true
 PRODUCT_KERNEL_CONFIG += odroidm1s.config
+
+vendor_lkm_dir := device/hardkernel/rk356x/modules/
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(vendor_lkm_dir)/8821cu.ko \
+    $(vendor_lkm_dir)/8812au.ko
+
+BUILD_BROKEN_DUP_RULES := true
