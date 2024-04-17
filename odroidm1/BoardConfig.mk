@@ -38,6 +38,9 @@ PRODUCT_KERNEL_CONFIG += odroidm1.config
 vendor_lkm_dir := device/hardkernel/rk356x/modules/
 BOARD_VENDOR_KERNEL_MODULES += \
     $(vendor_lkm_dir)/8821cu.ko \
-    $(vendor_lkm_dir)/8812au.ko
+    $(vendor_lkm_dir)/8812au.ko \
+    $(vendor_lkm_dir)/btbcm.ko \
+    $(vendor_lkm_dir)/btrtl.ko \
+    $(vendor_lkm_dir)/btusb.ko
 
 BUILD_BROKEN_DUP_RULES := true
