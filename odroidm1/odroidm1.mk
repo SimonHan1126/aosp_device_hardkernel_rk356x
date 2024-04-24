@@ -78,3 +78,17 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.official=https://dn.odroid.com/RK3568/ODROID-M1/Android/13/ \
     ro.url.mirror=https://www.odroid.in/mirror/dn.odroid.com/RK3568/ODROID-M1/Android/13/
+
+TARGET_BOARD_USE_MIPI_CAMEAR := true
+
+# for mipi camera
+ifeq ($(TARGET_BOARD_USE_MIPI_CAMEAR),true)
+CAMERA_ETC_PATH := $(TOP)/hardware/rockchip/camera/etc
+IQ_FILES_PATH := $(TOP)/external/camera_engine_rkaiq/iqfiles
+PRODUCT_COPY_FILES += \
+    $(CAMERA_ETC_PATH)/camera/camera3_profiles_$(TARGET_BOARD_PLATFORM).xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera3_profiles.xml \
+    $(call find-copy-subdir-files,*,$(CAMERA_ETC_PATH)/firmware,$(TARGET_COPY_OUT_VENDOR)/firmware) \
+    $(call find-copy-subdir-files,*,$(CAMERA_ETC_PATH)/camera,$(TARGET_COPY_OUT_VENDOR)/etc/camera) \
+    $(call find-copy-subdir-files,*,$(IQ_FILES_PATH)/isp21/,$(TARGET_COPY_OUT_VENDOR)/etc/camera/rkisp2/) \
+    $(call find-copy-subdir-files,*,$(IQ_FILES_PATH)/isp3x/,$(TARGET_COPY_OUT_VENDOR)/etc/camera/rkisp2/)
+endif
