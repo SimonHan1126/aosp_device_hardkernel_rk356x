@@ -7,3 +7,19 @@ service ups /vendor/bin/check_ups.sh
     group root
     disabled
     oneshot
+
+on post-fs-data
+    # Copy in Device Owner definitions before user-setup
+    mkdir /data/system  0700 system system
+    copy /system/device_owner.xml   /data/system/device_owner.xml
+    chown system system             /data/system/device_owner.xml
+    chmod 0600                      /data/system/device_owner.xml
+
+    copy /system/device_policies.xml /data/system/device_policies.xml
+    chown system system              /data/system/device_policies.xml
+    chmod 0600                       /data/system/device_policies.xml
+
+# When the framework says boot is complete, remount /system rw
+on property:sys.boot_completed=1
+    mount rootfs rootfs / remount rw
+    mount -o rw,remount /system
